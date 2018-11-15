@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //lat
+        let latitude = 85.9119
         
-        let latitude = 36.9959
-        
-        let longitude = 85.9119
+        let longitude = 36.9959
         
         APIManager.getWeather(at: (latitude , longitude)) {value, error in
             guard let value = value else {
@@ -33,13 +33,6 @@ class ViewController: UIViewController {
             print(value)
             self.view.backgroundColor = .green
         }
-        
-        
     }
-    
-    
-    
-
-
 }
 
