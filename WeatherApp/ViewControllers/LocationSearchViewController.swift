@@ -10,6 +10,8 @@ import UIKit
 
 class LocationSearchViewController: UIViewController {
 
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
 

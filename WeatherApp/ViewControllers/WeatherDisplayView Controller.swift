@@ -10,6 +10,16 @@ import UIKit
 
 class WeatherDisplayViewController: UIViewController {
 
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var iconLabel: UILabel!
+    
+    @IBOutlet weak var currentTempLabel: UILabel!
+    
+    @IBOutlet weak var highTempLabel: UILabel!
+    
+    @IBOutlet weak var lowTempLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +36,10 @@ class WeatherDisplayViewController: UIViewController {
                } else {
                 print("Sorry No Error Description")
                 }
-                self.view.backgroundColor = .red
                 return
                 
             }
             print(value)
-            self.view.backgroundColor = .green
         }
     }
 }
