@@ -8,22 +8,38 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 //APIManager struct
 struct APIManager {
-    static func getWeather(at location: Location, onComplete: @escaping (String?, Error?) -> Void) {
+    
+    enum APIErrors: Error {
+        case noData , noResponse, invalidData
+    }
+    
+    private let googleURL = ""
+    
+    
+    static func getWeather(at location: Location, onComplete: @escaping (WeatherData?, Error?) -> Void) {
         //Root of Url
         let root = "https://api.darksky.net/forecast/"
         //APIKey
-        let key = APIKeys.APIKey
+        let key = APIKeys.darkSkyAPIKey
         //Full URL
         let url = "\(root)\(key)/\(location.latitude),\(location.longitude)"
         
         //Alamofire request
         Alamofire.request(url).responseJSON { (response) in
+         //case for success
             switch response.result {
-                //case for success
             case .success(let value):
-                onComplete("\(value)", nil)
+                let json = JSON(value)
+                if let weatherData = WeatherData(json: json) {
+                    onComplete(weatherData, nil)
+                }else {
+                    onComplete(nil, APIErrors.invalidData)
+                }
+                
+                
                 //case for failure
             case .failure(let error):
                 onComplete(nil, error)

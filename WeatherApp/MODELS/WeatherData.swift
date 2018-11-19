@@ -67,12 +67,24 @@ class WeatherData {
     let lowTemperature: Double
     let condition: Condition
     
-    //required initalizer
+    //required initalizer / Designated initializer
     init(temperature: Double, highTemperature: Double, lowTemperature : Double, condition: Condition) {
         self.condition = condition
         self.highTemperature = highTemperature
         self.lowTemperature = lowTemperature
         self.temperature = temperature
 
+    }
+    
+    convenience init?(json:JSON) {
+        guard let temperature = json[WeatherDataKeys.currently.rawValue][WeatherDataKeys.temperature.rawValue].double,
+            let lowTemperature = json[WeatherDataKeys.daily.rawValue][WeatherDataKeys.data.rawValue][0][WeatherDataKeys.temperatureLow.rawValue].double,
+            let highTemperature = json[WeatherDataKeys.daily.rawValue][WeatherDataKeys.data.rawValue][0][WeatherDataKeys.temperatureHigh.rawValue].double,
+            let conditionString = json[WeatherDataKeys.currently.rawValue][WeatherDataKeys.icon.rawValue].string,
+            let condition = Condition(rawValue: conditionString)
+            else{
+            return nil
+        }
+        self.init(temperature: temperature, highTemperature: highTemperature, lowTemperature: lowTemperature, condition: condition)
     }
 }
