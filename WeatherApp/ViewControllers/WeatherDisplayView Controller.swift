@@ -30,23 +30,31 @@ class WeatherDisplayViewController: UIViewController {
         }
     }
     
+    var displayGeocodingData : GeocodingData! {
+        didSet {
+            locationLabel.text = displayGeocodingData.formattedAddress
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //lat
-        let latitude = 36.862969
+       setupDefaultUI()
+    }
+    
+    
+    func setupDefaultUI() {
         
-        let longitude = -85.670485
+        locationLabel.text = ""
+        iconLabel.text = "🐡"
+        currentTempLabel.text = "Enter Location"
+        highTempLabel.text = "-"
+        lowTempLabel.text = "-"
         
-        APIManager.getWeather(at: (latitude , longitude)) {weatherData, error in
-            if let recievedData = weatherData {
-                self.displayWeatherData = recievedData
-                print(recievedData)
-            }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
+    }
+    @IBAction func unwindToWeatherDisplay(segue: UIStoryboardSegue){
+        
     }
 }
 

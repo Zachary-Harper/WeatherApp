@@ -64,20 +64,22 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="darkSkyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="h4L-Kb-aWg">
-                                <rect key="frame" x="0.0" y="559" width="227" height="108"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darkSkyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="h4L-Kb-aWg">
+                                <rect key="frame" x="0.0" y="567" width="200" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="h4L-Kb-aWg" secondAttribute="height" multiplier="10:8" id="FaV-Rx-F1f"/>
+                                    <constraint firstAttribute="width" constant="200" id="XvM-TP-6ml"/>
                                     <constraint firstAttribute="height" constant="100" id="rDr-s6-Td3"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="h4L-Kb-aWg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="11S-ye-KlX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="akF-ZF-96f" secondAttribute="trailing" id="2WR-ks-oI0"/>
                             <constraint firstItem="N4r-rX-oTl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Wcn-VV-ZIC"/>
                             <constraint firstItem="akF-ZF-96f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d59-UW-ozP"/>
                             <constraint firstItem="N4r-rX-oTl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ji7-OZ-bGZ"/>
+                            <constraint firstItem="h4L-Kb-aWg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vKe-4c-eFf"/>
                             <constraint firstItem="akF-ZF-96f" firstAttribute="top" secondItem="N4r-rX-oTl" secondAttribute="bottom" constant="44.5" id="wZO-gg-hdx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -124,9 +126,11 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="6Lg-ua-eKK" id="qQU-AF-eVI"/>
+                        <segue destination="R3N-6v-pyZ" kind="unwind" identifier="unwindToWeatherDisplay" unwindAction="unwindToWeatherDisplayWithSegue:" id="pqh-xk-t7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzL-rs-jw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="R3N-6v-pyZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1948" y="136.28185907046478"/>
         </scene>

@@ -14,6 +14,7 @@
 		832C944E219CA172009F4E35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832C944C219CA172009F4E35 /* Main.storyboard */; };
 		832C9450219CA172009F4E35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832C944F219CA172009F4E35 /* Assets.xcassets */; };
 		832C9453219CA172009F4E35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832C9451219CA172009F4E35 /* LaunchScreen.storyboard */; };
+		83518FA321A340E20096A974 /* Geocoding .swift in Sources */ = {isa = PBXBuildFile; fileRef = 83518FA221A340E20096A974 /* Geocoding .swift */; };
 		838C504A219CA680004C1EAE /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C5049219CA680004C1EAE /* keys.swift */; };
 		838C504C219CA9CA004C1EAE /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C504B219CA9CA004C1EAE /* location.swift */; };
 		838C504F219CAAB2004C1EAE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C504E219CAAB2004C1EAE /* APIManager.swift */; };
@@ -31,6 +32,7 @@
 		832C944F219CA172009F4E35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		832C9452219CA172009F4E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		832C9454219CA172009F4E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83518FA221A340E20096A974 /* Geocoding .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geocoding .swift"; sourceTree = "<group>"; };
 		838C5049219CA680004C1EAE /* keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
 		838C504B219CA9CA004C1EAE /* location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
 		838C504E219CAAB2004C1EAE /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				838C504B219CA9CA004C1EAE /* location.swift */,
 				8301E48D219F28D000E8EB12 /* WeatherData.swift */,
+				83518FA221A340E20096A974 /* Geocoding .swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				8301E48B219DF4B000E8EB12 /* LocationSearchViewController.swift in Sources */,
 				838C504A219CA680004C1EAE /* keys.swift in Sources */,
+				83518FA321A340E20096A974 /* Geocoding .swift in Sources */,
 				8301E48E219F28D000E8EB12 /* WeatherData.swift in Sources */,
 				832C944B219CA172009F4E35 /* WeatherDisplayView Controller.swift in Sources */,
 				838C504F219CAAB2004C1EAE /* APIManager.swift in Sources */,
