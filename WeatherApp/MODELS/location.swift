@@ -7,5 +7,5 @@
 //
 
 import Foundation
-
+//makes  location equal to the latitude and longitude (both are doubles)
 typealias Location = (latitude: Double, longitude: Double)

@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class WeatherData {
-    enum Condition: String {
+    enum Condition: String {//weather conditions for the location that is pulled from the darksky api
         case clearDay = "clear-day"
         case clearNight = "clear-night"
         case rain = "rain"
@@ -22,9 +22,9 @@ class WeatherData {
         case partlyCloudyDay = "partly-cloudy-day"
         case partlyCloudyNight = "partly-cloudy-night"
       
-        //Conputed property that selects the icon based on the weather
+        //Computed property that selects the icon based on the weather
         var icon: String {
-            switch self {
+            switch self {//if the case is .condition then it returns a icon basded on that condition (.clearDay = SunIcon)
             case .clearDay:
                 return "🌞"
             case .clearNight:
@@ -75,7 +75,8 @@ class WeatherData {
         self.temperature = temperature
 
     }
-    
+    //convenience init
+    //also parses JSON
     convenience init?(json:JSON) {
         guard let temperature = json[WeatherDataKeys.currently.rawValue][WeatherDataKeys.temperature.rawValue].double,
             let lowTemperature = json[WeatherDataKeys.daily.rawValue][WeatherDataKeys.data.rawValue][0][WeatherDataKeys.temperatureLow.rawValue].double,

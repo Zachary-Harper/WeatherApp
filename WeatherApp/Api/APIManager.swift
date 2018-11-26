@@ -11,11 +11,11 @@ import Alamofire
 import SwiftyJSON
 //APIManager struct
 struct APIManager {
-    
+    //error enum
     enum APIErrors: Error {
         case noData , noResponse, invalidData
     }
-    
+    //google geocoding URL base
     private let googleURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     
     
@@ -48,11 +48,11 @@ struct APIManager {
     }
     
     func geocode(address: String, onCompletion: @escaping (GeocodingData?, Error?) -> Void) {
-        
+        //base google URL
         let googleURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
-        
+        //full geocoding URL
         let geoURL = googleURL + address + "&key=" + APIKeys.geoCodingAPIKey
-        
+        //AlamoFire Request for the location
         let request = Alamofire.request(geoURL)
         
         request.responseJSON { response in
